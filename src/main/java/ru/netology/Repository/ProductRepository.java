@@ -31,7 +31,7 @@ public class ProductRepository {
 
     public Product[] removeById(int id){
         if (findById(id) == null) {
-            throw new NotFoundException();
+            throw new NotFoundException("Element with id: " + id + " not found");
         }
         int length = items.length - 1;
         Product[] tmp = new Product[length];
